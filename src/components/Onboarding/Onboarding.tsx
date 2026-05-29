@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Onboarding = () => {
   return (
@@ -7,7 +7,7 @@ const Onboarding = () => {
         GET <span style={{ color: 'var(--color-text-muted)' }}>STARTED</span>
       </h2>
 
-      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--space-lg)' }}>
+      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-lg)' }}>
         
         {/* Questionnaire */}
         <div style={{ padding: 'var(--space-md)', border: '1px solid var(--color-border)', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
@@ -15,20 +15,28 @@ const Onboarding = () => {
             <h3 style={{ fontWeight: 900, marginBottom: 'var(--space-sm)' }}>1. INTAKE FORM</h3>
             <p style={{ marginBottom: 'var(--space-md)', color: 'var(--color-text-muted)' }}>Help me understand your goals and background.</p>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-OLyW4lCkYfMPM8nb332kztbGBIf1whiLJElz_lGffBzBdQ/viewform" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'block', textDecoration: 'none' }}>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScjQNCUM4UToII_lDhs4aFiS41q-GZHxZKYqswM9-NXR9njWQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'block', textDecoration: 'none' }}>
             FILL OUT FORM
           </a>
         </div>
 
-        {/* Booking */}
+        {/* Booking -> Direct Contact */}
         <div style={{ padding: 'var(--space-md)', border: '1px solid var(--color-border)', textAlign: 'center', backgroundColor: '#000', color: '#fff', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ fontWeight: 900, marginBottom: 'var(--space-sm)' }}>2. BOOK SESSION</h3>
-            <p style={{ marginBottom: 'var(--space-md)', opacity: 0.8 }}>Check availability and schedule your coaching or consult.</p>
+          <div style={{ backgroundColor: '#fff', color: '#000', padding: 'var(--space-md)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3 style={{ fontWeight: 900, marginBottom: 'var(--space-sm)' }}>2. BOOK SESSION</h3>
+              <p style={{ marginBottom: 'var(--space-md)', color: 'var(--color-text-muted)' }}>Contact Kade directly to schedule your consult or first session.</p>
+            </div>
+            
+            <div className="flex" style={{ flexDirection: 'column', gap: 'var(--space-sm)', width: '100%' }}>
+              <a href="tel:2706178312" className="btn-primary" style={{ display: 'block', textDecoration: 'none', textAlign: 'center', width: '100%' }}>
+                📞 CALL / TEXT
+              </a>
+              <a href="mailto:Strengthlabperformance@gmail.com" className="btn-primary" style={{ display: 'block', textDecoration: 'none', textAlign: 'center', width: '100%', backgroundColor: '#fff', color: '#000' }}>
+                ✉️ EMAIL ME
+              </a>
+            </div>
           </div>
-          <a href="https://calendar.app.google/xZ8S7p95K3hiw1ZG9" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'block', textDecoration: 'none', backgroundColor: '#fff', color: '#000', borderColor: '#fff' }}>
-            VIEW CALENDAR
-          </a>
         </div>
 
         {/* Waiver */}
@@ -52,7 +60,7 @@ const Onboarding = () => {
         <div style={{ display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden' }}>
           <iframe 
             title="STRENGTHLAB PERFORMANCE LIABILITY WAIVER & RELEASE OF LIABILITY" 
-            src="https://www.jotform.com/sign/261457545173057/invite/01kskf0vp8bfa041dcaa4933cd?signEmbed=1" 
+            src="https://www.jotform.com/sign/261467541448059/invite/01ksp00rkr607fdc7d42087ac4?signEmbed=1" 
             style={{ height: '700px', width: '100%', maxWidth: '800px', border: 0 }}
           ></iframe>
         </div>
@@ -70,9 +78,18 @@ const Onboarding = () => {
         <p style={{ marginBottom: 'var(--space-lg)', fontWeight: 600 }}>Call, Text, or Email directly.</p>
         <div className="flex" style={{ justifyContent: 'center', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
           <a href="tel:2706178312" className="btn-primary" style={{ textDecoration: 'none' }}>📞 (270) 617-8312</a>
-          <a href="mailto:info@strengthlabperformance.com" className="btn-primary" style={{ textDecoration: 'none', backgroundColor: '#fff', color: '#000' }}>✉️ EMAIL ME</a>
+          <a href="mailto:Strengthlabperformance@gmail.com" className="btn-primary" style={{ textDecoration: 'none', backgroundColor: '#fff', color: '#000' }}>✉️ EMAIL ME</a>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (min-width: 769px) {
+          .mobile-only { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .desktop-only { display: none !important; }
+        }
+      `}} />
     </section>
   );
 };

@@ -10,11 +10,12 @@ const Hero = () => {
       flexDirection: 'column', 
       justifyContent: 'center',
       padding: 'var(--space-xl) 0',
-      backgroundImage: 'linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("/assets/hero-bg.png")',
+      backgroundImage: `linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("${import.meta.env.BASE_URL}assets/hero-bg.png")`,
       backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      backgroundPosition: 'center',
+      textAlign: 'inherit' // Respect the global centering on mobile
     }}>
-      <div style={{ maxWidth: '900px' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         <h2 style={{ 
           color: 'var(--color-text)', 
           fontSize: '0.9rem', 
@@ -22,7 +23,8 @@ const Hero = () => {
           fontWeight: 800, 
           marginBottom: 'var(--space-md)',
           borderLeft: '4px solid var(--color-text)',
-          paddingLeft: 'var(--space-sm)'
+          paddingLeft: 'var(--space-sm)',
+          display: 'inline-block' // Keep border proportional to text
         }}>
           OBJECTIFIED PERFORMANCE
         </h2>
@@ -40,15 +42,15 @@ const Hero = () => {
           fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', 
           color: 'var(--color-text)', 
           maxWidth: '700px', 
+          margin: '0 auto var(--space-lg)',
           lineHeight: 1.5, 
-          marginBottom: 'var(--space-lg)',
           fontWeight: 500
         }}>
           High-performance athletic training facility focused on transforming 
           lives through elite coaching and personalized strength development.
         </p>
         
-        <div className="flex" style={{ gap: 'var(--space-md)', flexWrap: 'wrap', alignItems: 'center' }}>
+        <div className="flex" style={{ gap: 'var(--space-md)', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
           <a href="#book" className="btn-primary" style={{ minWidth: '200px', textDecoration: 'none', textAlign: 'center' }}>
             BOOK SESSION
           </a>
@@ -91,7 +93,7 @@ const Hero = () => {
                   📞 CALL / TEXT
                 </a>
                 <a 
-                  href="mailto:info@strengthlabperformance.com" 
+                  href="mailto:Strengthlabperformance@gmail.com" 
                   style={{ padding: '1rem', fontWeight: 700, textAlign: 'center' }}
                   onClick={() => setShowContactOptions(false)}
                 >

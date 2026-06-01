@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container flex" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)' }}>
           <img 
-            src="/assets/logo.png" 
+            src={`${import.meta.env.BASE_URL}assets/logo.png`} 
             alt="Strength Lab Performance Logo" 
             style={{ height: '40px', width: 'auto' }} 
           />

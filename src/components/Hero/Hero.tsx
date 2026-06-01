@@ -46,7 +46,7 @@ const Hero = () => {
           lineHeight: 1.5, 
           fontWeight: 500
         }}>
-          High-performance athletic training facility focused on transforming 
+          High-performance athletic training focused on transforming 
           lives through elite coaching and personalized strength development.
         </p>
         
